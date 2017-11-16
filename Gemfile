@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 #added gems
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'react-rails', '~> 1.7', '>= 1.7.1'
+gem 'devise'
+  
 
 
 group :development, :test do
