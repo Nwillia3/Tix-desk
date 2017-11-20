@@ -14,7 +14,23 @@ class TixesController < ApplicationController
 	  end
   end
 
-   private
+  def update
+    @tix = Tix.find(params[:id])
+    if @tix.update(tix_params)
+      render json: @tix
+    else
+      render json: @tix.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @tix = Tix.find(params[:id])
+    @tix.destroy
+    head :no_content
+  end
+
+
+ 	private
 
     def tix_params
       params.require(:tix).permit(:tag, :task, :date, :comment, :priority, :user_id)
